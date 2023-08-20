@@ -162,7 +162,7 @@ prompt_hg() {
 
 # Dir: current working directory
 prompt_dir() {
-  # prompt_segment 008 010 $(basename `pwd`) 
+  prompt_segment 010 008 $(pwd)
 }
 
 # Virtualenv: current working virtualenv
@@ -188,7 +188,7 @@ prompt_status() {
 
 prompt_head() {
   echo "\r               "  # Clear prevous line
-  echo "\r %{%F{8}%}[%64<..<%~%<<]"  # Print Dir.
+  # echo "\r %{%F{8}%}[%64<..<%~%<<]"  # Print Dir.
 }
 
 ## Main prompt
@@ -198,7 +198,7 @@ build_prompt() {
   prompt_status
   prompt_virtualenv
   prompt_context
-  # prompt_dir
+  prompt_dir
   prompt_git
   prompt_bzr
   prompt_hg
